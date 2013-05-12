@@ -20,7 +20,7 @@ $
 print "input 'q' to quit:";
 
 while(true){
- printf("> ");
+	printf("> ");
 	line = stdin.readline();
 	line = line.strip().lower();
 	if(line == 'q'){
