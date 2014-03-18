@@ -67,7 +67,7 @@ time.sleep(1);
 
 Python’s syntax is said to be clear and elegant. It is good for small peace of codes, but not good for more than 100 lines of codes. I usually mis-understand the number of indents when first glance at a more than 10 lines block of codes after an if.
 
-__And TAB vs SPACE is particularly annoying!__ Couldn’t it be an annotation to set TAB=4 SPACE or TAB=8 SPACE?
+__And TAB vs SPACE is particularly annoying!__
 
 The curly braces are quit clear and elegant, most people feel comfortable at curly braces.
 
