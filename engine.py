@@ -58,6 +58,7 @@ class CpyBuilder:
 		self.switch_expr_stack = []
 		self.switch_continue_stack = []
 		self.class_stack = []
+		self.class_names = [];
 
 		self.base_dir = base_dir
 		self.output_dir = output_dir
@@ -386,6 +387,7 @@ class CpyBuilder:
 
 	def op_class_enter(self, name, parent):
 		self.class_stack.append([])
+		self.class_names.append(name)
 
 		self.write(self.indent())
 		if parent == None:
@@ -397,9 +399,11 @@ class CpyBuilder:
 		self.write('pass\n')
 
 	def op_class_leave(self):
+		if self.class_stack[-1]:
+			self.op_construct('');
 		self.class_stack.pop()
+		self.class_names.pop()
 		self.write('\n')
-
 		self.block_depth -= 1
 
 	def op_var_def(self, is_static, id, val):
@@ -419,9 +423,11 @@ class CpyBuilder:
 
 	def op_construct(self, params):
 		self.write('\n')
-		self.op_function('__init__', params)
 
+		self.op_function('__init__', params)
 		self.block_depth += 1
+		self.write(self.indent())
+		self.write('super(' + self.class_names[-1] + ', this).__init__(' + params + ')\n')
 		for s in self.class_stack[-1]:
 			self.write(self.indent())
 			self.write(s + '\n')
