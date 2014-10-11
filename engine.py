@@ -12,6 +12,23 @@ from ExprParser import ExprParser
 
 class CpyEngine:
 	def compile(self, srcfile, base_dir, output_dir):
+		head, tail = os.path.split(srcfile)
+		if not os.path.exists(output_dir):
+			os.mkdir(output_dir)
+		if not os.path.exists(output_dir + '/__init__.py'):
+			fp = open(output_dir + '/__init__.py', 'w')
+			fp.close()
+
+		dstfile = os.path.normpath(output_dir + '/' + tail.split('.')[0] + '.py')
+		#print 'compile: %-30s=> %s' % (srcfile, dstfile)
+		if os.environ.has_key('FAST_CPY') and os.environ['FAST_CPY'] == 'yes':
+			if os.path.exists(dstfile):
+				src_mtime = os.path.getmtime(srcfile)
+				dst_mtime = os.path.getmtime(dstfile)
+				#print src_mtime, dst_mtime
+				if src_mtime < dst_mtime:
+					return dstfile
+
 		#fp = codecs.open(sys.argv[1], 'r', 'utf-8')
 		fp = open(srcfile, 'r')
 		char_stream = antlr3.ANTLRInputStream(fp)
@@ -32,16 +49,6 @@ class CpyEngine:
 		eval = Eval(nodes)
 
 		#######################################
-		head, tail = os.path.split(srcfile)
-
-		if not os.path.exists(output_dir):
-			os.mkdir(output_dir)
-		if not os.path.exists(output_dir + '/__init__.py'):
-			fp = open(output_dir + '/__init__.py', 'w')
-			fp.close()
-
-		dstfile = os.path.normpath(output_dir + '/' + tail.split('.')[0] + '.py')
-		#print 'compile: %-30s=> %s' % (srcfile, dstfile)
 
 		cpy = CpyBuilder(dstfile, base_dir, output_dir)
 		eval.prog(cpy)
