@@ -8,7 +8,7 @@ Cpy is the real general purposed dynamic c-like syntax scripting language. __Cpy
 // file: hello.cpy
 printf("Hello World!\n");
 
-$ cpy hello.cpy
+$ cpy hello
 Hello World!
 $
 ```
@@ -65,7 +65,7 @@ time.sleep(1);
 
 ### Whitespace indentation to delimit block is bad
 
-Python’s syntax is said to be clear and elegant. It is good for small peace of codes, but not good for more than 100 lines of codes. I usually mis-understand the number of indents when first glance at a more than 10 lines block of codes after an if.
+Python’s syntax is said to be clear and elegant. It is good for small piece of codes, but not good for more than 100 lines of codes. I usually mis-understand the number of indents when first glance at a more than 10 lines block of codes after an if.
 
 __And TAB vs SPACE is particularly annoying!__
 
@@ -75,13 +75,13 @@ The curly braces are quit clear and elegant, most people feel comfortable at cur
 
 i++ is very usefull.
 
-### “this” is that!
+### "this" is that!
 
 Python requires you to put an unnecessary “self” as the first argument of a function definition in a class, but to omit it when invoking that function. What’s the meaning of that? It’s total garbage.
 
 ### Confusing expression of calling function in parent class
 
-Couldn’t it be as simple as “parent.f()”?
+Couldn’t it be as simple as “parent.f()”? Why multi-inheritance?
 
 ### Useless lambda expression
 
