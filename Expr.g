@@ -388,12 +388,10 @@ fragment DOUBLE_QUOTE_CHARS
 	: ~('"')
 	// 应该是 '\\"' 吧?
 	| '\\' '"'
-	| '\\' '\\'
 	;
 fragment SINGLE_QUOTE_CHARS
 	: ~('\'')
 	| '\\' '\''
-	| '\\' '\\'
 	;
 
 fragment NEWLINE

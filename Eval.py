@@ -1,4 +1,4 @@
-# $ANTLR 3.5 Eval.g 2013-04-12 19:22:25
+# $ANTLR 3.4 Eval.g 2012-12-09 16:07:29
 
 import sys
 from antlr3 import *
@@ -544,7 +544,9 @@ class Eval(TreeParser):
     # Eval.g:62:1: import_stmt : ^( IMPORT (a= module |b= module '.*' )+ ) ;
     def import_stmt(self, ):
         a = None
+
         b = None
+
 
         try:
             try:
@@ -622,6 +624,7 @@ class Eval(TreeParser):
     def exec_stmt(self, ):
         exec_list1 = None
 
+
         try:
             try:
                 # Eval.g:73:2: ( ^( EXEC_STMT exec_list ) )
@@ -666,12 +669,19 @@ class Eval(TreeParser):
 
         op = None
         member_expr2 = None
+
         member_expr3 = None
+
         expr4 = None
+
         member_expr5 = None
+
         member_expr6 = None
+
         member_expr7 = None
+
         member_expr8 = None
+
 
         try:
             try:
@@ -849,6 +859,7 @@ class Eval(TreeParser):
 
         exec_expr9 = None
 
+
         ps = []
         try:
             try:
@@ -919,7 +930,9 @@ class Eval(TreeParser):
     # Eval.g:96:1: printf_stmt : ^( PRINTF expr ( expr_list )? ) ;
     def printf_stmt(self, ):
         expr10 = None
+
         expr_list11 = None
+
 
         try:
             try:
@@ -978,6 +991,7 @@ class Eval(TreeParser):
     # Eval.g:100:1: print_stmt : ^( PRINT expr_list ) ;
     def print_stmt(self, ):
         expr_list12 = None
+
 
         try:
             try:
@@ -1079,6 +1093,7 @@ class Eval(TreeParser):
     # Eval.g:115:1: return_stmt : ^( RETURN ( expr )? ) ;
     def return_stmt(self, ):
         expr13 = None
+
 
         try:
             try:
@@ -1211,6 +1226,7 @@ class Eval(TreeParser):
     def if_clause(self, ):
         expr14 = None
 
+
         try:
             try:
                 # Eval.g:131:2: ( ^( IF expr block ) )
@@ -1335,6 +1351,7 @@ class Eval(TreeParser):
     def while_stmt(self, ):
         expr15 = None
 
+
         try:
             try:
                 # Eval.g:142:2: ( ^( WHILE expr block ) )
@@ -1380,6 +1397,7 @@ class Eval(TreeParser):
     # Eval.g:145:1: do_while_stmt : ^( DO_WHILE block expr ) ;
     def do_while_stmt(self, ):
         expr16 = None
+
 
         try:
             try:
@@ -1431,6 +1449,7 @@ class Eval(TreeParser):
     # Eval.g:153:1: switch_stmt : ^( SWITCH expr case_block ) ;
     def switch_stmt(self, ):
         expr17 = None
+
 
         try:
             try:
@@ -1659,6 +1678,7 @@ class Eval(TreeParser):
     def case_test(self, ):
         expr18 = None
 
+
         try:
             try:
                 # Eval.g:166:2: ( ^( CASE expr ) )
@@ -1760,8 +1780,11 @@ class Eval(TreeParser):
     # Eval.g:178:1: for_stmt : ^( FOR (a= exec_list )? expr block (b= exec_list )? ) ;
     def for_stmt(self, ):
         a = None
+
         b = None
+
         expr19 = None
+
 
         try:
             try:
@@ -1863,7 +1886,9 @@ class Eval(TreeParser):
     def foreach_stmt(self, ):
         k = None
         v = None
+
         expr20 = None
+
 
         try:
             try:
@@ -2053,6 +2078,7 @@ class Eval(TreeParser):
     def throw_stmt(self, ):
         expr22 = None
 
+
         try:
             try:
                 # Eval.g:206:2: ( ^( THROW expr ) )
@@ -2176,6 +2202,7 @@ class Eval(TreeParser):
         ID24 = None
         module23 = None
 
+
         try:
             try:
                 # Eval.g:214:2: ( ^( CATCH module ( ID )? block ) )
@@ -2272,6 +2299,7 @@ class Eval(TreeParser):
         ID25 = None
         params26 = None
 
+
         try:
             try:
                 # Eval.g:225:2: ( ^( FUNCTION ID params block ) )
@@ -2322,6 +2350,7 @@ class Eval(TreeParser):
 
 
         param_decl27 = None
+
 
         ps = []
         try:
@@ -2392,6 +2421,7 @@ class Eval(TreeParser):
 
         ID28 = None
         atom29 = None
+
 
         try:
             try:
@@ -2657,7 +2687,9 @@ class Eval(TreeParser):
         ID30 = None
         ID32 = None
         expr31 = None
+
         expr33 = None
+
 
         try:
             try:
@@ -2781,6 +2813,7 @@ class Eval(TreeParser):
     def constructor(self, ):
         params34 = None
 
+
         try:
             try:
                 # Eval.g:263:2: ( ^( CONSTRUCTOR params block ) )
@@ -2901,6 +2934,7 @@ class Eval(TreeParser):
 
         primary36 = None
 
+
         ps = []
         try:
             try:
@@ -2975,7 +3009,9 @@ class Eval(TreeParser):
 
         ID39 = None
         index_expr37 = None
+
         call_expr38 = None
+
 
         a=''
         try:
@@ -3061,6 +3097,7 @@ class Eval(TreeParser):
 
         expr_list40 = None
 
+
         try:
             try:
                 # Eval.g:292:2: ( ^( CALL ( expr_list )? ) )
@@ -3122,8 +3159,11 @@ class Eval(TreeParser):
 
 
         a = None
+
         b = None
+
         expr41 = None
+
 
         try:
             try:
@@ -3223,6 +3263,7 @@ class Eval(TreeParser):
 
         expr42 = None
 
+
         ps = []
         try:
             try:
@@ -3298,6 +3339,7 @@ class Eval(TreeParser):
 
 
         a = None
+
 
         try:
             try:
@@ -3506,7 +3548,9 @@ class Eval(TreeParser):
 
 
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3556,7 +3600,9 @@ class Eval(TreeParser):
 
 
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3606,7 +3652,9 @@ class Eval(TreeParser):
 
 
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3656,7 +3704,9 @@ class Eval(TreeParser):
 
 
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3706,7 +3756,9 @@ class Eval(TreeParser):
 
 
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3757,7 +3809,9 @@ class Eval(TreeParser):
 
         op = None
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3819,7 +3873,9 @@ class Eval(TreeParser):
 
         op = None
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3881,7 +3937,9 @@ class Eval(TreeParser):
 
         op = None
         b = None
+
         c = None
+
 
         try:
             try:
@@ -3943,6 +4001,7 @@ class Eval(TreeParser):
 
         a = None
 
+
         try:
             try:
                 # Eval.g:365:2: ( ^( '!' a= expr ) )
@@ -3987,6 +4046,7 @@ class Eval(TreeParser):
 
         a = None
 
+
         try:
             try:
                 # Eval.g:369:2: ( ^( NEGATIVE a= expr ) )
@@ -4030,7 +4090,9 @@ class Eval(TreeParser):
 
 
         a = None
+
         expr43 = None
+
 
         try:
             try:
@@ -4096,7 +4158,9 @@ class Eval(TreeParser):
 
 
         module44 = None
+
         call_expr45 = None
+
 
         try:
             try:
@@ -4146,6 +4210,7 @@ class Eval(TreeParser):
 
 
         expr_list46 = None
+
 
         try:
             try:
@@ -4208,6 +4273,7 @@ class Eval(TreeParser):
 
 
         property47 = None
+
 
         s = ''
         try:
@@ -4279,6 +4345,7 @@ class Eval(TreeParser):
         a = None
         expr48 = None
 
+
         try:
             try:
                 # Eval.g:402:2: (a= ( ID | STRING | INT ) ':' expr )
@@ -4331,6 +4398,7 @@ class Eval(TreeParser):
 
 
         a = None
+
 
         try:
             try:

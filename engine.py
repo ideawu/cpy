@@ -20,9 +20,9 @@ class CpyEngine:
 			return set()
 		self.found_files.add(srcfile)
 		
-		lines = []
-		with open(srcfile, 'rt') as fp:
-			lines = fp.readlines()
+		fp = open(srcfile, 'rt')
+		lines = fp.readlines()
+		fp.close()
 
 		imports = []
 		for line in lines:
@@ -89,6 +89,7 @@ class CpyEngine:
 			#print src_mtime, dst_mtime
 			if src_mtime < dst_mtime:
 				return dstfile
+		#print 'compile: %-30s=> %s' % (srcfile, dstfile)
 		#print 'compile: %-30s=> %s' % (srcfile[len(base_dir)+1:], dstfile[len(base_dir)+1:])
 
 		if not os.path.exists(output_dir):
